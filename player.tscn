@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b5kgdie3ponlx"]
+
+[ext_resource type="Texture2D" uid="uid://jj304lexusg1" path="res://icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dgv216i5w54" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t4f33"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t4f33"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5jhwp"]
+albedo_texture = ExtResource("1_4flbx")
+uv1_triplanar = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=21501493]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2127621481]
+shape = SubResource("CapsuleShape3D_t4f33")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=750917804]
+mesh = SubResource("CapsuleMesh_t4f33")
+material = SubResource("StandardMaterial3D_5jhwp")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1840101240]
